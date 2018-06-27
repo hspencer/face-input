@@ -19,9 +19,9 @@ var touched;
 
 function setup() {
   var w = constrain(windowWidth, 200, 600);
-  var canvas = createCanvas(w, w * .6);
+  var canvas = createCanvas(w, w * .75);
   canvas.parent('canvasContainer');
-  face = new Face(width/2, height*.4, 1.1);
+  face = new Face(width/2, height*.49, 1);
   colorNegative = color(172, 147, 255);
   colorNeutral = color(232, 232, 232);
   colorPositive = color(250, 255, 0);
