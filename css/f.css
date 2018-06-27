@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800');
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 22px;
+	background-color: #D7E9FF;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 740px;
+	text-align: center;
+}
+
+
+#question{
+	padding: 2em .5em;
+	font-size: 150%;
+}
+
+#val{
+	padding: 1em 0;
+}
