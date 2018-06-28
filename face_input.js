@@ -1,27 +1,24 @@
 /**
- *
- *     Face Input ~ for cognitive accesibility
- *
- */
+ **
+ **     Face Input ~ for cognitive accesibility
+ **
+ **/
 
 
 /* global variables */
 
-var colorNegative, 
-  colorNeutral, 
-  colorPositive;      // colors
-
-var X;         // x input (normalized)
-var output;    // output HTML container
-var xc;        // contrained drag value
-
-var touched;
+var colorNegative, colorNeutral, colorPositive;      // colors
+var X;                                               // x input (normalized)
+var output;                                          // output HTML container
+var xc;                                              // contrained drag value
+var touched;                                         // boolean
 
 function setup() {
-  var w = constrain(windowWidth, 200, 600);
-  var canvas = createCanvas(w, w * .75);
+  var w = constrain(windowWidth, 200, 740);
+  var canvas = createCanvas(w, w);
+  let sc = map(windowWidth, 240, 1920, .777, 3);
   canvas.parent('canvasContainer');
-  face = new Face(width/2, height*.49, 1);
+  face = new Face(width/2, height/2, sc);
   colorNegative = color(172, 147, 255);
   colorNeutral = color(232, 232, 232);
   colorPositive = color(250, 255, 0);
@@ -66,7 +63,6 @@ function drawSlider(y) {
   output.innerHTML = X.toPrecision(3);
 }
 
-
 function Face(x, y, s) {
   this.x = x; // x position
   this.y = y; // y position
@@ -74,10 +70,10 @@ function Face(x, y, s) {
   // current, start, middle and target expression
   this.ce = this.se = this.me = this.te = [];
   this.col = color(200);
-  this.se = expression_sad;
-  this.me = expression_neutral;
-  this.te = expression_happy;
-  this.ce = expression_default;
+  this.se = expressionSad;
+  this.me = expressionNeutral;
+  this.te = expressionHappy;
+  this.ce = expressionDefault;
 
 
   this.drawFace = function() {
@@ -190,7 +186,7 @@ function Face(x, y, s) {
 ======================= expression data =======================
 */
 
-var expression_happy = [
+var expressionHappy = [
   [-57.0, -40.0], 
   [-43.0, -57.0], 
   [-27.0, -54.0], 
@@ -204,7 +200,7 @@ var expression_happy = [
   [-32.0, -32.0]
 ];
 
-var expression_sad = [
+var expressionSad = [
   [-57.0, -40.0], 
   [-43.0, -57.0], 
   [-27.0, -54.0], 
@@ -218,7 +214,7 @@ var expression_sad = [
   [-32.0, -32.0]
 ];
 
-var expression_neutral = [
+var expressionNeutral = [
   [-55.0, -38.0], 
   [-43.0, -52.0], 
   [-27.0, -54.0], 
@@ -232,7 +228,7 @@ var expression_neutral = [
   [-32.0, -32.0]
 ];
 
-var expression_default = [
+var expressionDefault = [
   [-55.0, -38.0], 
   [-43.0, -52.0], 
   [-27.0, -54.0], 
