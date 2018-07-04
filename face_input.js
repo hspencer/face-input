@@ -14,9 +14,9 @@ var xc;                                              // contrained drag value
 var touched;                                         // boolean
 
 function setup() {
+
   regen();
-  let sc = map(windowWidth, 240, 1920, .777, 3);
-  
+  let sc = map(windowWidth, 240, 1920, .5, 3);
   face = new Face(width/2, height/2, sc);
   colorNegative = color(172, 147, 255);
   colorNeutral = color(232, 232, 232);
@@ -32,11 +32,11 @@ function setup() {
 function regen(){
   var side;
   if(windowHeight > windowWidth){
-   side = constrain(windowWidth, 200, 740);
+   side = constrain(windowWidth, 200, 700);
  } else{
    side = windowHeight;
  }
- var canvas = createCanvas(side, side);
+ var canvas = createCanvas(side, side*.75);
  canvas.parent('canvasContainer');
 }
 
